@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h2{
+            color: #fff;
+            
+        }
+        .login {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(238, 235, 235);
+  border: 2px solid #fff;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px #45c4de;
+  background-image: url(abstract-color-background-picture-8016-white-line-illustration-wallpaper-preview.jpg);
+  background-position: center;
+  background-size: cover;
+  
+}
+.login button {
+  padding: 8px 20px;
+  background: #b68;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+}
+.login button:hover{
+    background: #45c4de;
+    color: #fff;
+}
+.note{
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.note a{
+    color: #3d34e1;
+}
+.login input {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+  padding: 8px;
+  background: black;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.b{
+  text-decoration: none;
+}
+    </style>
+
+
+</head>
+<body>
+    <div class="login">
+  <h2> Login</h2>
+  <input type="text" placeholder="Username" id="user">
+  <input type="password" placeholder="Password" id="pass">
+<button onclick="login()">Login</button>
+<p class="note">Don't have account? <a href="#">sign up</a></p>
+<div>
+ 
+ </div> 
+</body>
+<script>
+  
+
+
+
+
+
+
+function login() {
+    var u = document.getElementById("user").value;
+    var p = document.getElementById("pass").value;
+
+    if (u === "admin" && p === "1234") {
+        window.location.href = "index.html";
+    } else {
+        alert("Wrong username or password");
+    }
+}
+</script>
+</html>

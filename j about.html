@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background: linear-gradient(to left, #cc2b5a,#753a88);
+      color: #333;
+      
+    }
+    
+    .about{
+      padding: 40px 20%;
+    }
+    .container {
+      display: flex;
+      text-align: center;
+      gap: 50px;
+    }
+    .img{
+      width: 580px;
+      height: 200px;
+      
+    }
+    .img img{
+        height: 250px;
+        width: 350px;
+        border-radius: 20px;
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-right: 20px;
+ 
+    }
+    h2{
+      font-size: 50px;
+      font-family: 'Times New Roman', Times, serif;
+      color: #e7a809;
+     margin-bottom: 30px;
+     
+    }
+    p{
+      font-size: 25px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      font-weight: bolder;
+    }
+    .btn{
+      padding: 10px;
+      font-size: 15px;
+      background: linear-gradient(135deg,#d4af37,#b8860b);
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      font-weight: 200;
+      transition: 0.3s;
+    }
+    .btn:hover{
+      transform: scale(1.05);
+    }
+    .box{
+      /* background: #fff; */
+      display: flex;
+      padding: 40px 50px;
+      text-align: center; 
+      align-items: center;
+      gap: 80px;
+      margin-left: 25rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1)
+      
+    }
+   
+    .box h3{
+      font-size: 35px;
+      color: #b8860b;
+    }
+    p{
+      font-size: 17px;
+      margin-top: 10px;
+    }
+     @media(max-width: 768px){
+      .container{
+        flex-direction: column;
+        text-align: center;
+      }
+      .img{
+        width: 100%;
+      }
+      .box{
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener("scroll", () => {
+  const stats = document.querySelectorAll(".stat-box");
+
+  stats.forEach(stat => {
+    const position = stat.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (position < screenHeight - 100) {
+      stat.style.opacity = "1";
+      stat.style.transform = "translateY(0)";
+    }
+  });
+});
+
+  </script>
+</head>
+
+<body>
+  <section class="about">
+    <div class="container">
+      <div class="img">
+        <img src="8.png" alt="" />
+      </div>
+      <div class="contact">
+        <h2>About Our Jwellery</h2>
+        <p>We believe jewellery is not just an accessory, it's a memory, a story,
+          and a symbol of love. Our handcrafted collections are designed with
+          elegance, purity, and timeless beauty.</p>
+          <p>From traditional designs to modern luxury, every piece reflects
+          perfection and passion.</p>
+          <button class="btn">Explore Collection</button>
+      </div>
+    </div>
+  </section>
+  
+  
+  <header class="box">
+    <div class="a">
+      <h3>15+</h3>
+      <p> Year Experience</p>
+    </div>
+    
+     <div class="a">
+      <h3>6000+</h3>
+      <p>Happy client</p>
+    </div>
+    
+      <div class="a">
+      <h3>400+</h3>
+      <p>Unique Designs</p>
+    </div>
+  </header>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background: linear-gradient(to bottom,#ddd,#111);
+    }
+    .heading {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h1{
+      font-size: 50px;
+      color: #eb1342;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    .container {
+      display: flex;
+      max-width: 800px;
+      gap: 30px;
+      margin: auto;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .info,.contact {
+      background: #fff;
+      flex: 1;
+      padding: 35px;
+      border-radius: 20px;
+      
+      box-shadow: 0 10px 25px #ddd;
+    }
+    h2{
+      color: #345563;
+      margin-bottom: 15px;
+    }
+    p{
+      margin-bottom: 10px;
+    }
+    .contact input,
+    .contact textarea{
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .contact textarea{
+      height: 120px;
+      resize: none;
+    }
+    button{
+      width: 100%;
+      padding: 10px;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    button:hover{
+      background: #6f4529;
+    }
+    .error{
+      font-size: 15px;
+      color: red;
+    }
+    
+    @media(max-width:768){
+      .container{
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    document.getElementById("contact").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let message = document.getElementById("message").value.trim();
+  let errorMsg = document.getElementById("errorMsg");
+
+  if (name === "" || email === "" || message === "") {
+    errorMsg.textContent = "Please fill all required fields!";
+  } else {
+    errorMsg.textContent = "";
+    alert("Thank you! Your message has been sent 💍✨");
+    this.reset();
+  }
+});
+
+  </script>
+</head>
+
+<body>
+  <section class="heading">
+    <h1>Contact us</h1>
+    
+    <div class="container">
+      <div class="info">
+        <h2>Get in touch </h2>
+        <p><strong>Address:</strong>&nbsp;&nbsp;&nbsp;Jaipur Rajasthan</p>
+        <p><strong>Email:</strong>&nbsp;&nbsp;&nbsp;vanshika923@gmail.com</p>
+        <p><strong>phone:</strong>&nbsp;&nbsp;&nbsp;91+ 9213546852</p>
+        <p><strong>Instagram:</strong>&nbsp;&nbsp;&nbsp;Ruby.Radiance05</p>
+      </div>
+      <form class="contact" id="contactform">
+        <input type="text" placeholder="your name" id="name">
+        <input type="text" placeholder="email" id="email">
+        <input type="text" placeholder="subject" id="subject">
+        <textarea id="massage" placeholder="your message"></textarea>
+        <button type="submit">Send message</button>
+        <p class="error" id="errorMsg"></p>
+      </form>
+    </div>
+ </section>
+  
+</body>
+
+</html>

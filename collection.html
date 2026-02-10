@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Collection Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    body {
+      background: linear-gradient(to right, #b76e79, rgb(166, 225, 243));
+      width: 100%;
+      height: 800px;
+    }
+
+    .h {
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      color: rgba(109, 9, 139, 0.432);
+    }
+
+    .filter-buttons {
+      margin-bottom: 30px;
+    }
+
+    .filter-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      font-weight: bolder;
+      background: #ddd;
+      font-size: 20px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .filter-buttons button.active,
+    .filter-buttons button:hover {
+      background: #b76e79;
+      color: white;
+    }
+
+    .collection {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+
+    }
+
+    .collection:hover {
+      transform: translateY(-10px);
+    }
+
+    .collection img {
+
+      margin: auto;
+      align-content: center;
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      overflow: hidden;
+      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.9);
+      transition: 0.3s;
+    }
+
+    h3 {
+      margin: 15px 0 5px;
+    }
+
+    p {
+      color: white;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+
+    @media(max-width:768px){
+      .h{
+        flex-direction: column;
+
+      }
+    }
+  </style>
+  <script>
+    function filterItems(category) {
+
+
+      const items = document.querySelectorAll(".collection div");
+
+      items.forEach(function (item) {
+
+
+        if (category === "all") {
+          item.style.display = "block";
+        }
+        else {
+
+          if (item.classList.contains(category)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        }
+
+      });
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <section class="h">
+    <h1>Our Collection</h1>
+
+
+    <div class="filter-buttons">
+      <button class="active" onclick="filterItems('all')">All</button>
+      <button onclick="filterItems('ring')">Rings</button>
+      <button onclick="filterItems('necklace')">Necklaces</button>
+      <button onclick="filterItems('earring')">Earrings</button>
+
+    </div>
+
+
+    <div class="collection">
+      <div class="item-ring">
+        <img src="4.png" alt="">
+        <h3>Gold Ring</h3>
+        <p>₹6,999</p>
+      </div>
+
+      <div class="item necklace">
+        <img src="5.png" alt="">
+        <h3>Diamond Necklace</h3>
+        <p>₹11,999</p>
+      </div>
+
+      <div class="item earring">
+        <img src="6.png" alt="">
+        <h3>Silver Earrings</h3>
+        <p>₹2,499</p>
+      </div>
+
+      <div class="item ring">
+        <img src="7.png" alt="">
+        <h3>Platinum Ring</h3>
+        <p>₹5,999</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
